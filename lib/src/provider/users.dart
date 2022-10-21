@@ -9,4 +9,7 @@ class Users with ChangeNotifier {
   List<User> get all => [..._items.values];
 
   int get count => _items.length;
+
+  User byIndex(int i) => all.elementAt(i);
+
 }

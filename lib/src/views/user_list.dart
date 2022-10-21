@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:list_users/src/components/user_tile.dart';
-import 'package:list_users/src/data/dummy_user.dart';
-
-import '../models/user.dart';
+import 'package:list_users/src/provider/users.dart';
+import 'package:provider/provider.dart';
 
 class UserList extends StatelessWidget {
   const UserList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final Users users = Provider.of(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Lista de Usuários'),
       ),
       body: ListView.builder(
-        itemCount: users.values.length,
+        itemCount: users.all.length,
         itemBuilder: (BuildContext context, int index) => UserTile(
-          users.values.elementAt(index),
+          users.byIndex(index),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -25,6 +25,4 @@ class UserList extends StatelessWidget {
       ),
     );
   }
-  Map<String, User> get users => {...dummyUsers};
-
 }
