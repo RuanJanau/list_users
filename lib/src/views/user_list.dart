@@ -21,7 +21,9 @@ class UserList extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          users.remove(users.byIndex(0));
+        },
       ),
     );
   }

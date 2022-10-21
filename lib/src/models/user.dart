@@ -10,5 +10,22 @@ class User {
     required this.email,
     required this.avatarUrl,
   });
-}
 
+  User copyWith({
+    String? id,
+    String? name,
+    String? email,
+    String? avatarUrl,
+  }) {
+    return User(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      email: email ?? this.email,
+      avatarUrl: avatarUrl ?? this.avatarUrl,
+    );
+  }
+
+  byIndex(int i) {}
+
+  void remove(byIndex) {}
+}
