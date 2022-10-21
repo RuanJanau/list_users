@@ -19,8 +19,12 @@ class UserList extends StatelessWidget {
           users.values.elementAt(index),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {},
+      ),
     );
   }
-
   Map<String, User> get users => {...dummyUsers};
+
 }
