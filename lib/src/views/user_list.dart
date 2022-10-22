@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:list_users/src/components/user_tile.dart';
 import 'package:list_users/src/provider/users.dart';
+import 'package:list_users/src/routes/app_routes.dart';
 import 'package:provider/provider.dart';
 
 class UserList extends StatelessWidget {
@@ -22,7 +23,7 @@ class UserList extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-          users.remove(users.byIndex(0));
+          Navigator.of(context).pushNamed(AppRoutes.USER_FORM);
         },
       ),
     );
