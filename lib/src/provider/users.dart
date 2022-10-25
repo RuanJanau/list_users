@@ -26,7 +26,6 @@ class Users with ChangeNotifier {
 
   void remove(User user) {
     _items.remove(user.id);
-    print('object');
     notifyListeners();
   }
 }
